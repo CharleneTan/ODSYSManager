@@ -1,0 +1,50 @@
+body{ 
+	margin: 0px;padding: 0px;width: 720px;height: 640px;background: #6A6D74;overflow-x: hidden;
+}
+#topFrame{ 
+	width: 100%;height:60px;text-align: center;
+}
+#topFrame span{ 
+	width: 100px;height: 60px;line-height: 60px;color: white;float: left;font-size: 22px;margin-left: 100px;
+}
+#topFrame label{ 
+	float: right;line-height: 30px;margin-top: 16px;
+}
+#saveOrEdit{ 
+	width: 70px;height: 30px;border-radius: 25px;background: white;color: black;float: right;
+	margin-right: 50px;cursor:pointer;
+}
+#modifyPass{ 
+	width: 100px;height: 30px;border-radius: 25px;background: #101C28;color: white;float: right;
+	margin-right: 20px;cursor:pointer;
+}
+.userMsg{ 
+	width: 100%;height: 65px;
+}
+.userMsg img{ 
+	display: inline-block;float: left;width: 50px;height: 42px;margin-left: 100px;
+}
+.userMsg div{ 
+	background:#DADCE8;display: inline-block;float: left;font-size:20px;width: 80px;height: 42px;text-align:right;line-height: 42px; 
+	padding-right: 5px;
+}
+.userMsg input{ 
+	display: inline-block;float: left;width: 300px;height: 40px;border:none;font-size: 20px;
+	color:#868681;padding-left: 10px;background: #C4C4C4;
+}
+#modifyPassTips{ 
+	width: 410px;height: 300px;position: absolute;top: 100px;left: 200px;background: white;
+	border-radius: 20px;
+}
+#modifyPassTips .modify{ 
+	width: 100%;height: 50px;
+} 
+#modifyPassTips .modify span{ 
+	float: left;width: 100px;height: 50px;text-align: right;line-height: 50px;font-size: 20px;
+}
+#modifyPassTips .modify input{ 
+	float: left;margin-left: 10px;font-size: 20px;width:220px;height: 30px;margin-top: 10px;
+}
+#whitePage{ 
+	width: 100%;height: 640px;position: absolute; top: 0px;left:0px;
+}

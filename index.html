@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset='utf-8'">           
+	<title>后台管理系统</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css"> 
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+	window.onload = function(){ 
+		$("#frame").hide();
+		$("#menuManager").hide();
+		$("#userCenter").hide();
+		$("#orderManager").hide();
+		$("#tableManage").click(function(){ 
+			$("#menuManager").hide();
+			$("#userCenter").hide();
+			$("#orderManager").hide();
+			$("#frame").show();
+			$("#frame").empty();
+			var frame = document.createElement("iframe");
+			frame.src="./frame.html";
+			$(frame).addClass("frame");
+			document.getElementById("frame").appendChild(frame);
+		});
+		$("#menuMana").click(function(){ 
+			$("#frame").hide();
+			$("#userCenter").hide();
+			$("#orderManager").hide();
+			$("#menuManager").show();
+			$("#menuManager").empty();
+
+			var menu = document.createElement("iframe");
+			menu.src="menuManager.html";
+			$(menu).addClass('menuManager');
+			document.getElementById("menuManager").appendChild(menu);
+		});
+		$("#userCenterSpace").click(function(){ 
+			$("#frame").hide();
+			$("#menuManager").hide();
+			$("#orderManager").hide();
+			$('#userCenter').show();
+			$('#userCenter').empty();
+
+			var menu = document.createElement("iframe");
+			menu.src="userCenter.html";
+			$(menu).addClass('userFrame');
+			document.getElementById("userCenter").appendChild(menu);
+		});
+		$("#orderMana").click(function(){ 
+			$("#frame").hide();
+			$("#menuManager").hide();
+			$("#userCenter").hide();
+			$('#orderManager').show();
+			$('#orderManager').empty();
+
+			var menu = document.createElement("iframe");
+			menu.src="orderManager.html";
+			$(menu).addClass('orderM');
+			document.getElementById("orderManager").appendChild(menu);
+		});
+	}
+	</script>
+</head>
+<body>
+	<div id="bodyPage">
+		<div id="Manager">
+			<div id="nameAndTitle">
+				<span id="restName">（海底捞）</span>
+				<span >管理系统</span>
+			</div>
+			<div id="managerAndUserMsg">
+				<ul>
+					<li>
+						<img src="./image/userImg.png" style="width:20px;height:20px;">
+						<span id="userName">华子</span>
+						<span id="logout">登出</span>
+					</li>
+					<li id="userCenterSpace">个人中心</li>
+					<li id="tableManage">桌台管理</li>
+					<li id="menuMana">菜单管理</li>
+					<li id="orderMana">订单管理</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div  id="frame">
+		</div>
+		<div id="menuManager">
+		</div>
+		<div id="userCenter">
+			
+		</div>
+		<div id="orderManager">
+			
+		</div>
+	</div>
+</body>
+</html>

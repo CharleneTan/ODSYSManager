@@ -1,0 +1,135 @@
+body{ 
+	margin: 0px;padding: 0px;width: 720px;height: 640px;background: #6A6D74;overflow-x:hidden;
+}
+#pageBody{ 
+	width: 100%;
+}
+li{ 
+	list-style: none;
+}
+ol li{ 
+	width: 100px;height: 130px;display: inline-block;margin-right: 22px;
+}
+ol li img{ 
+	width: 90px;height: 90px;
+}
+ol li span{ 
+	font-size: 20px;width: 90px;height: 20px;text-align: center;line-height: 20px;display: inline-block;
+}
+#orderMsg{ 
+	background: white;width: 300px;border: 1px solid black;position: absolute;left: 210px;top: 100px;
+}
+#orderId{ 
+	margin:0px auto;width: 90%;height: 50px;border-bottom: 1px solid black;line-height: 50px;font-size: 22px;
+}
+#tableAndDate{ 
+	margin:0px auto;width: 90%;height: 80px;border-bottom: 1px solid black;
+}
+#tableAndDate div{ 
+	height: 33%;font-size: 20px;
+}
+#orderMess{ 
+	margin:0px auto;width: 90%;
+}
+#op{ 
+	width: 100%;height: 50px;
+}
+#op div{ 
+	width: 33%;display: inline-block;background: #558AA9;border-radius: 6px;height: 30px;text-align: center;
+	line-height:30px;font-size: 22px;margin-left: 30px;color:white;margin-top: 6px;
+}
+.orders{ 
+	width: 100%;height: 30px;line-height: 30px;
+}
+.orderName{ 
+	width: 130px;display: inline-block;text-align: left;
+}
+.price{ 
+	width: 52px;display: inline-block;text-align: right;padding-right: 10px;
+}
+.count{ 
+	width: 50px;display: inline-block;text-align: right;padding-right: 10px;
+}
+#isSure{ 
+	position: absolute;width: 200px;height: 100px;background: white;border-radius: 10px;
+	top: 200px;left: 220px;font-size: 20px;
+}
+#is span{ 
+	width: 100px;height: 30px;text-align: center;line-height: 30px;position: absolute;top: 20px;left: 50px;
+}
+#is div{ 
+	background: #15222B;width: 100px;height: 30px;text-align: center;line-height: 30px;
+	border-radius: 8px;margin: 60px auto;color: white;
+}
+/**********************************************************/
+#addNullTableOrder{ 
+	width: 660px;height:500px;background: white;position: absolute;top: 40px;left: 30px;
+}
+#headerSearch{ 
+	width: 100%;height: 40px;background: #558AA9;text-align: center;line-height: 40px;text-align: center;
+}
+#tableSort{ 
+	float: left;width: 70px;height: 460px;text-align: center;line-height: 50px;font-size: 20px;
+	border-right: 1px solid #558AA9;
+}
+#tableDishes{ 
+	float: left;width: 265px;height: 460px;border-right: 1px solid #558AA9;
+	overflow-y:scroll;overflow-x:hidden;  
+}
+#tableOrders{ 
+	float: left;width: 320px;height: 460px;text-align: center;line-height: 50px;overflow-y:scroll;
+	overflow-x:hidden;  
+}
+#tableSort ul{ 
+	width: 100%;margin: 0px;padding: 0px;
+}
+#tableSort ul li{ 
+	border-bottom: 1px solid #558AA9;cursor:pointer;
+}
+.checkTableSort{ 
+	background:  #6A74F5;padding: 10px;border-radius: 5px;
+}
+.tableDishesMsg span{ 
+	display: inline-block;float: left;
+}
+.tableDishesMsg{ 
+	width: 100%;height: 460px;font-size: 14px;
+}
+.tableDishesMsg ul{ 
+	margin: 0px;padding: 0px;width: 100%;text-align: center;line-height: 50px;
+}
+.tableDishesMsg ul li{ 
+	border-bottom: 1px solid #558AA9;width: 100%;height: 50px;cursor: pointer;
+}
+.dishesNumber{ 
+	width: 70px;
+}
+.dishesName{ 
+	width: 110px;
+}
+.dishesPrice{ 
+	width: 67px;
+}
+.ordersMsg{ 
+	width: 100%;height: 40px;
+}
+.ordersMsg span{ 
+	width: 33%;height: 40px;display: inline-block;float: left;
+}
+.orderPriceTotal{ 
+	float: right;width:100px;height: 40px;
+}
+.orderCount label{ 
+	width: 33%;height: 50px;display: inline-block;display: inline-block;float: left;
+}
+#addOrderOK{ 
+	width: 100px;height: 34px;text-align: center;line-height: 34px;font-size: 22px;background:#558AA9; 
+	position: absolute;color: white;top: 450px;right: 50px;border-radius: 10px;
+}
+#dishesSearch{ 
+	float: left;width: 150px;height: 30px;font-size: 20px;background: #558AA9;border: 1px solid white;color: white;
+	margin-left: 20px;margin-top: 4px;margin-bottom: 0px;
+}
+#blockName{ 
+	float: left;color: white;font-size: 22px;margin-left: 100px;
+}

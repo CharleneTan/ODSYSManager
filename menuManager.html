@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset='utf-8'">           
+	<title>后台管理系统</title>
+	<link rel="stylesheet" type="text/css" href="css/menuManager.css"> 
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/menuManager.js"></script>
+</head>
+	<body>
+		<div id="header">
+			<div id="addDishes" style="float:left;margin-left:10px;cursor:pointer;">菜品添加&nbsp;+</div>
+			<div class="head" id="serachBtn" style="margin-right:20px;cursor:pointer;">搜索</div>
+			<div class="head" id="asName">按名称</div>
+			<input class="head" type="text" style="height:28px;" value="编号/菜品名称" id="inputText" />
+
+		</div>
+
+		<div id="firstRow">
+			<div class="fTr">编号</div>
+			<div class="fTr">菜品名称</div>
+			<div class="fTr" id="sortBtnClick"><span style="margin-left:24px;">类别</span><img src="./image/list.jpg" style="width:20px;height:20px;float:right;margin-top:10px;margin-right:10px;cursor:pointer;"></div>
+			<div class="fTr">价格</div>
+			<div class="fTr">操作</div>
+		</div>
+		<div id="dishesList">
+			<div class="row bgColor1" Signature="1" daily="1" sort="1">
+				<div class="fTr bgColor1 id">A10</div>
+				<div class="fTr bgColor1 name">片</div>
+				<div class="fTr bgColor1">热菜</div>
+				<div class="fTr bgColor1">90</div>
+				<input type="hidden" value="233">	
+				<div class="fTr bgColor1">
+					<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+			<div class="row bgColor2"  Signature="1" daily="0"   sort="2">
+				<div class="fTr bgColor2 id">A11</div>
+				<div class="fTr bgColor2 name" >水肉片</div>
+				<div class="fTr bgColor2">凉菜</div>
+				<div class="fTr bgColor2">90</div>
+				<input type="hidden" value="32">
+				<div class="fTr bgColor2">
+					<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+			<div class="row bgColor1" Signature="1" daily="0"    sort="3">
+				<div class="fTr bgColor1 id">A12</div>
+				<div class="fTr bgColor1 name"  >肉片</div>
+				<div class="fTr bgColor1">汤羹</div>
+				<div class="fTr bgColor1">90</div>
+				<input type="hidden" value="21212">	
+				<div class="fTr bgColor1">
+					<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+			<div class="row bgColor2" Signature="1" daily="0"    sort="2">
+				<div class="fTr bgColor2 id">A13</div>
+				<div class="fTr bgColor2 name" >水</div>
+				<div class="fTr bgColor2">凉菜</div>
+				<div class="fTr bgColor2">90</div>
+				<input type="hidden" value="12">
+				<div class="fTr bgColor2">
+					<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+			<div class="row bgColor1" Signature="1" daily="0"    sort="1">
+				<div class="fTr bgColor1 id">A14</div>
+				<div class="fTr bgColor1 name">水煮</div>
+				<div class="fTr bgColor1">热菜</div>
+				<div class="fTr bgColor1">90</div>
+				<div class="fTr bgColor1">
+				<input type="hidden" value="21">
+				<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+			<div class="row bgColor1" Signature="1" daily="0"    sort="4">
+				<div class="fTr bgColor1 id">A15</div>
+				<div class="fTr bgColor1 name">水煮</div>
+				<div class="fTr bgColor1">推荐</div>
+				<div class="fTr bgColor1">90</div>
+				<input type="hidden" value="122">
+				<div class="fTr bgColor1">
+					<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+			
+			<div class="row bgColor2" Signature="1" daily="1"  sort="4">
+				<div class="fTr bgColor2 id">A17</div>
+				<div class="fTr bgColor2 name">水煮肉</div>
+				<div class="fTr bgColor2">主食</div>
+				<div class="fTr bgColor2">90</div>
+				<input type="hidden" value="112">
+				<div class="fTr bgColor2">
+					<span op='1' style="cursor:pointer;">编辑</span>&nbsp;<span op='2' style="cursor:pointer;">删除</span>
+				</div>
+			</div>
+
+		</div>
+		
+		<div id="sortBtn">
+			<div in=0>全部</div>
+			<div in=1>热菜</div>
+			<div in=2>凉菜</div>
+			<div in=3>汤羹</div>
+			<div in=4>主食</div>
+			<div in=5>酒水</div>
+			<div in=6>推荐</div>
+			<div in=7>招牌</div>
+		</div>
+
+		<div id="search">
+			<div index = '1'>按名称</div>
+			<div index='2'>按编号</div>
+		</div>
+
+
+		<div id="isSure">
+			<div id="tips">是否删除菜品</div>
+			<div id="opro"><span id="ok">确定</span><span id="no">取消</span></div>
+		</div>
+
+		<!--修改菜品-->
+		<div name="modifyDishes" id="modify" action="" method="">
+			<div style="width:100%;height:50px;border-bottom:1px solid black;line-height:50px;text-align:left;font-size:20px;padding-left:40px;">编辑菜品<span style="float:right;margin-right:60px;cursor:pointer;" id="cancel">-</span></div>
+			<div class="formSty">
+				<input name="dishesId" type="text" class="inputS" id="id" value="请输入菜品编码" />
+				<select name="sort" id="selects">
+					<option val="sort">菜品分类</option>
+					<option val="hotDishes">热菜</option>
+					<option val="coldDishes">凉菜</option>
+					<option val="soup">汤羹</option>
+					<option val="stapleFood">主食</option>
+					<option val="drinks">酒水</option>
+				</select>
+			</div>
+			<div class="formSty">
+				<input name="dishesName" type="text" class="inputS" id="name" value="请输入菜品名称" />
+				<input type="checkBox" id="Signature">招牌菜
+			</div>
+			<div class="formSty">
+				<input name="price" type="text" class="inputS" id="price" value="菜品价格" />
+				<input type="checkBox" id="daily">今日推荐
+			</div>
+			<div class="formSty">
+				<input type="submit" value="确认修改" />
+			</div>
+		</from>
+
+		
+		<form name="addDishes" id="add" action="" method="">
+			<div style="width:100%;height:50px;border-bottom:1px solid black;line-height:50px;text-align:left;font-size:20px;padding-left:40px;">添加菜品<span style="float:right;margin-right:60px;cursor:pointer;" id="cancelAdd">-</span></div>
+			<div class="formSty">
+				<input name="dishesId" type="text" class="inputS" value="请输入菜品编码" />
+				<select name="sort" id="select">
+					<option val="sort">菜品分类</option>
+					<option val="hotDishes">热菜</option>
+					<option val="coldDishes">凉菜</option>
+					<option val="soup">汤羹</option>
+					<option val="stapleFood">主食</option>
+					<option val="drinks">酒水</option>
+				</select>
+			</div>
+			<div class="formSty">
+				<input name="dishesName" type="text" class="inputS" value="请输入菜品名称" />
+				<input type="checkBox" name="Signature">招牌菜
+			</div>
+			<div class="formSty">
+				<input name="price" type="text" class="inputS" value="菜品价格" />
+				<input type="checkBox" name="daily">今日推荐
+			</div>
+			<div class="formSty">
+				<input type="submit" id="sub" />
+			</div>
+		</form>
+	</body>
+</html>

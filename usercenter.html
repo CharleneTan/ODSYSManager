@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset='utf-8'">           
+	<link rel="stylesheet" type="text/css" href="css/userCenter.css"> 
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/userCenter.js"></script>
+</head>
+</head>
+<body>
+	<div id="topFrame">
+		<span>用户资料</span>
+		<label id="saveOrEdit">编辑</label>
+		<label id="modifyPass">密码修改</label>
+	</div>
+		
+	<form name="modifyUserMsg">
+		<div class="userMsg" style="margin-top:10px;">
+			<img src="./image/userName.jpg">
+			<div>用户名</div>
+			<input name="userName" value="JINGZHAODIANZIDIANCAN" type="text" disabled/>
+		</div>
+		<div class="userMsg">
+			<img src="./image/userEmail.jpg">
+			<div>邮箱</div>
+			<input name="userEmail" value="huaziHear@gmail.com" type="text" disabled/>
+		</div>
+		<div class="userMsg">
+			<img src="./image/restName.jpg">
+			<div>餐厅名称</div>
+			<input name="restName" value="旭日院" type="text" disabled/>
+		</div>
+		<div class="userMsg">
+			<img src="./image/address.jpg">
+			<div>餐厅地址</div>
+			<input name="address" value="长安区子午大道" type="text" disabled/>
+		</div>
+		<div class="userMsg">
+			<img src="./image/phoneNumber.jpg">
+			<div>手机号</div>
+			<input name="phoneNumber" value="13572584184" type="text" disabled/>
+		</div>
+		<div style="margin-bottom:20px;">
+			<span style="font-size:22px;margin-left:100px;text-align:center;color:white;
+			">用户配置</span>
+		</div>
+		<div class="userMsg">
+			<img src="./image/tableNumber.jpg">
+			<div>现有桌台</div>
+			<input name="tableNumber" value="26" type="text" disabled/>
+		</div>
+	</form>
+	<div style="position:absolute;top:80px;right:40px;color:red;text-align:left;width:100px;height:40px;">唯一不可修改</div>
+	<div style="position:absolute;top:140px;right:40px;color:red;text-align:left;width:100px;height:40px;" id="mailMsg"></div>
+	<div style="position:absolute;top:340px;right:40px;color:red;text-align:left;width:100px;height:40px;" id="phoneMsg"></div>
+	<div id="whitePage">
+		<div id="modifyPassTips">
+			<div class="modify" style="border-bottom:1px solid #7E8174;">
+				<span  style="font-size:20px;float:left;">密码修改</span>
+			</div>
+			<div class="modify">
+				<span>当前密码</span>
+				<input type="password" name="nowPass">
+			</div>
+			<div class="modify">
+				<span>新密码</span>
+				<input type="password" name="newPass">
+			</div>
+			<div class="modify">
+				<span>密码确认</span>
+				<input type="password" name="password">
+			</div>
+			<div class="modify">
+				<div id="ok" style="float:left;width:100px;height:40px;background:#0E1A26;color:white;font-size:20px;text-align:center;line-height:40px;border-radius:10px;margin-left:80px;margin-top:20px;cursor:pointer;">确认修改</div>
+				<div id="cancel" style="float:left;width:80px;height:38px;background:#909090;color:white;font-size:20px;text-align:center;line-height:40px;border-radius:10px;margin-left:20px;margin-top:20px;cursor:pointer;">取消</div>
+			</div>
+			<div style="position:absolute;top:66px;right:2px;color:red;width:66px;height:30px;text-align:left;" id="passTips"></div>
+			<div style="position:absolute;top:166px;right:2px;color:red;width:66px;height:30px;text-align:left;" id="passVali"></div>
+		</div>
+	</div>
+</body>
+</html>

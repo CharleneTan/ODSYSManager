@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset='utf-8'">           
+	<link rel="stylesheet" type="text/css" href="css/frame.css"> 
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/frame.js"></script>
+</head>
+<script type="text/javascript">
+		jsonData = { 
+				'tableNum':12,
+				'tableMsg':[ 
+						{ 
+							'orderId':"1",
+							"tableId":"1",
+							"date":"2",
+							"count":3,
+							"status":1,
+							"content":[
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								}
+							]
+						},
+						{ 
+							'orderId':"",
+							"tableId":"2",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"121232",
+							"tableId":"3",
+							"date":"12020-2123-3232",
+							"count":3287,
+							"status":2,
+							"content":[
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								}
+							]
+						},
+						{ 
+							'orderId':"121232",
+							"tableId":"4",
+							"date":"12020-2123-3232",
+							"count":3287,
+							"status":2,
+							"content":[
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								},
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								},
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								},
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								}
+							]
+						},
+						{ 
+							'orderId':"",
+							"tableId":"5",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"121232",
+							"tableId":"6",
+							"date":"12020-2123-3232",
+							"count":3287,
+							"status":2,
+							"content":[
+								{ 
+									'name':"红烧肉",
+									"number":2,
+									"price":32
+								},
+								{ 
+									'name':"没菜扣肉",
+									"number":3,
+									"price":2
+								},
+								{ 
+									'name':"铁板烧",
+									"number":4,
+									"price":2
+								}
+							]
+						},
+						{ 
+							'orderId':"",
+							"tableId":"7",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"",
+							"tableId":"8",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"",
+							"tableId":"9",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"",
+							"tableId":"10",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"",
+							"tableId":"11",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						},
+						{ 
+							'orderId':"",
+							"tableId":"12",
+							"date":"",
+							"count":undefined,
+							"status":0,
+							"content":undefined
+						}
+				]
+		}
+	function initPage(){ 
+		var index = jsonData['tableNum'];
+		for(var i=0;i<index;i++){ 
+			var status = jsonData['tableMsg'][i]["status"];
+			var tableId = jsonData["tableMsg"][i]['tableId'];
+			createComputer(status,tableId);
+		}
+	}
+
+	function computerClick(tableId){ 
+			var index = jsonData['tableNum'];
+			for(var i=0;i<index;i++){ 
+				var id = jsonData["tableMsg"][i]['tableId'];
+				var status = jsonData["tableMsg"][i]['status'];
+				if(id===tableId){ 
+					$("#orderMsg").show();
+					var orderId = jsonData["tableMsg"][i]['orderId'];
+					var tableId = jsonData["tableMsg"][i]['tableId'];
+					var date = jsonData["tableMsg"][i]['date'];
+					var cou =  jsonData["tableMsg"][i]['count'];
+
+					setMsg(orderId,tableId,date,cou);
+
+					var length =jsonData["tableMsg"][i]['content'].length;
+					$("#orderMess").empty();
+						for(var j=0;j<length;j++){ 
+							var price = jsonData["tableMsg"][i]['content'][j]['price'];
+							var name =jsonData["tableMsg"][i]['content'][j]['name'];
+							var count = jsonData["tableMsg"][i]['content'][j]['number'];
+							
+							createOrders(name,price,count);
+						}
+					
+				}
+			}
+	}
+
+
+	function setMsg(orderId,tableId,date,cou){ 
+		$("#orderIds").text(orderId);
+		$("#tableId").text(tableId);
+		$("#orderDate").text(date);
+		$("#total").text(cou);
+	}
+
+	function clearData(tableId){ 
+		var index = jsonData['tableNum'];
+
+		for(var i=0;i<index;i++){ 
+			var id = jsonData["tableMsg"][i]['tableId'];
+			if(id===tableId){ 
+				jsonData["tableMsg"][i]['status']=1;
+			}
+		}
+	}
+msg =  [
+	{ 
+		'orderId':"121232",
+		"tableId":"9",
+		"date":"12020-2123-3232",
+		"count":3287,
+		"status":2,
+		"content":[
+				{ 
+					'name':"红烧肉",
+					"number":2,
+					"price":32
+				},
+				{ 
+					'name':"没菜扣肉",
+					"number":3,
+					"price":2
+				},
+				{ 
+					'name':"铁板烧",
+					"number":4,
+					"price":2
+				}
+				]
+	},
+	{ 
+		'orderId':"121232",
+		"tableId":"1",
+		"date":"12020-2123-3232",
+		"count":3287,
+		"status":2,
+		"content":[
+				{ 
+					'name':"红烧肉",
+					"number":2,
+					"price":32
+				},
+				{ 
+					'name':"没菜扣肉",
+					"number":3,
+					"price":2
+				},
+				{ 
+					'name':"铁板烧",
+					"number":4,
+					"price":2
+				}
+			]
+	}
+]
+function dealNewOrder(msg){ 
+	if(msg==undefined){ 
+		return ;
+	}
+
+	var length = msg.length;
+	var index = jsonData['tableNum'];
+	for(var i=0;i<length;i++){ 
+		var tableId = msg[i]['tableId'];
+		for(var j=0;j<index;j++){ 
+			if(tableId==jsonData["tableMsg"][j]['tableId']){ 
+				//$("img [tableid="+tableId+"]").attr("src","./image/green.png");
+				jsonData["tableMsg"][j]['orderId'] = msg[i]['orderId'];
+				jsonData["tableMsg"][j]['date'] = msg[i]['date'];
+				jsonData["tableMsg"][j]['count'] = msg[i]['count'];
+				jsonData["tableMsg"][j]['status'] = msg[i]['status'];
+				jsonData["tableMsg"][j]['content'] = msg[i]['content'];
+				$("#computers").empty();
+				initPage();
+			}
+		}
+	}
+
+}
+function  clearTable(){ 
+	var tableID = $("#tableId").text();
+	var index = jsonData['tableNum'];
+	for(var j=0;j<index;j++){
+			if(tableID==jsonData["tableMsg"][j]['tableId']){ 
+				jsonData["tableMsg"][j]['orderId'] = "";
+				jsonData["tableMsg"][j]['date'] = "";
+				jsonData["tableMsg"][j]['count'] = "";
+				jsonData["tableMsg"][j]['status'] =0;
+				jsonData["tableMsg"][j]['content'] = "";
+				$("#computers").empty();
+				initPage();
+			}
+		}
+	$.ajax({                          
+   				type: "POST",
+   				url: "",
+   				data: tableID,
+   				success: function(msg){
+    				$("#isSure").hide();
+  				 }
+		});
+	$("#isSure").hide();
+}
+</script>
+<body>
+	<div id="pageBody">
+		<ol id="computers">
+		</ol>
+	</div>
+
+	<div id="orderMsg">
+		<div id="orderId">
+			<img src="./image/close.jpg" style="position:absolute;right:6px;" id="close" />
+			订单号：<span id="orderIds" style="color:#558AA9;"></span>号
+		</div>
+		<div id="tableAndDate">
+			<div>桌号：<span id="tableId" style="color:#558AA9;"></span>号</div>
+			<div>下单时间：<span style="color:#558AA9;" id="orderDate"></span></div>
+			<div id="">消费金额：<span id="total"></span>元</div>
+		</div>
+		<div id="orderMess">
+		</div>
+		<div id="op">
+			<div id="settle">结账</div><div id="">打印</div>
+		</div>
+	</div>
+	<div id="isSure" style="display:none;">
+		<div id="is">
+			<span>结账成功</span>
+			<div id="clearTable">清台</div>
+		</div>
+	</div>
+	<!--**********************************************-->
+	<div>
+	<div id="addNullTableOrder" style="display:none">
+		<div id="headerSearch">
+			<input type="text" value="菜品搜索" id="dishesSearch"/>
+			<span id="blockName">添加订单</span>
+			<img id="closeAddTableOrder" style="float:right;width:24px;height:24px;margin-top:8px;margin-right:6px;" src="./image/close1.jpg">
+		</div>
+		<div id="tableSort">
+			<ul>
+				<li in ="hot"><span class="checkTableSort">热菜</span></li>
+				<li in="cold"><span>凉菜</span></li>
+				<li in="soup"><span>汤羹</span></li>
+				<li in="staple"><span>主食</span></li>
+				<li in="drinks"><span>酒水</span></li>
+			</ul>
+		</div>
+		<div id="tableDishes">
+
+		<!-- dishesSort= 'hot' 热菜-->
+			<div dishesSort="hot" class="tableDishesMsg SS">
+				<ul>
+					<li flog='1'>
+						<span class="dishesNumber">A12121212</span>
+						<span class="dishesName">水1</span>
+						<span class="dishesPrice">￥:153元</span>
+					</li>
+					<li flog='1'>
+						<span class="dishesNumber">A1039</span>
+						<span class="dishesName">水煮2</span>
+						<span class="dishesPrice">￥:35元</span>
+					</li>
+				</ul>
+			</div>
+		
+		<!-- dishesSort= 'cold' 凉菜-->
+			<div dishesSort="cold" class="tableDishesMsg SS">
+				<ul>
+					<li flog='1'>
+						<span class="dishesNumber">A5678</span>
+						<span class="dishesName">水煮肉3</span>
+						<span class="dishesPrice">￥:32.4元</span>
+					</li>
+					<li flog='1'>
+						<span class="dishesNumber">A133</span>
+						<span class="dishesName">水煮肉片4</span>
+						<span class="dishesPrice">￥:15.1元</span>
+					</li>
+				</ul>
+			</div>
+		
+		
+		<!-- dishesSort= 'soup' 汤羹-->
+			<div dishesSort="soup" class="tableDishesMsg SS">
+				<ul>
+					<li flog='1'>
+						<span class="dishesNumber">A1628</span>
+						<span class="dishesName">鱼6</span>
+						<span class="dishesPrice">￥:534元</span>
+					</li>
+					<li flog='1'>
+						<span class="dishesNumber">A1233</span>
+						<span class="dishesName">香肉丝7</span>
+						<span class="dishesPrice">￥:52元</span>
+					</li>
+				</ul>
+			</div>
+		
+		
+		<!-- dishesSort= 'staple' 主食-->
+			<div dishesSort="staple" class="tableDishesMsg SS">
+				<ul>
+					<li flog='1'>
+						<span class="dishesNumber">A6678</span>
+						<span class="dishesName">香8</span>
+						<span class="dishesPrice">￥:23元</span>
+					</li>
+					<li flog='1'>
+						<span class="dishesNumber">A1833</span>
+						<span class="dishesName">肉片9</span>
+						<span class="dishesPrice">￥:51元</span>
+					</li>
+				</ul>
+			</div>
+		
+		
+		<!-- dishesSort= 'drinks' 酒水-->
+			<div dishesSort="drinks" class="tableDishesMsg SS">
+				<ul>
+					<li flog='1'>
+						<span class="dishesNumber">A9678</span>
+						<span class="dishesName">片23</span>
+						<span class="dishesPrice">￥:32元</span>
+					</li>
+					<li flog='1'>
+						<span class="dishesNumber">A3233</span>
+						<span class="dishesName">煮22</span>
+						<span class="dishesPrice">￥:33元</span>
+					</li>
+				</ul>
+			</div>
+		<!--空div留给搜索使用-->
+			<div dishesSort="other" class="tableDishesMsg">
+				<ul id="serachMsg">
+				</ul>
+			</div>
+		</div>
+		<div id="tableOrders">
+		</div>
+		<div id="addOrderOK">确定</div>
+	</div>
+
+	<!--**********************************************-->
+</body>
+</html>

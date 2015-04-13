@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset='utf-8'">           
+	<link rel="stylesheet" type="text/css" href="css/orderManager.css"> 
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/orderManager.js"></script>
+</head>
+<body>
+	<from id="header" name="orderByTime" action="" method="" style="display:block">
+		<img src="./image/search.jpg" style="width:30px;height:30px;margin:10px;float:left;">
+		<input type="text" id="startSelect"  onclick="fPopCalendar(event,this,this)" onfocus="this.select()" style="padding-left:12px;" 
+		name="startSelect"></input>
+
+		<span style="width:100px;height:30px;margin-top:10px;text-align:center;line-height:30px;float:left;color:white;">至</span>
+		
+		<input type="text" id="endSelect"  onclick="fPopCalendar(event,this,this)" onfocus="this.select()" style="padding-left:12px;" 
+		name="endSelect"></input>
+		
+		<span id="doIt">搜索</span>
+	</from>
+
+	<div id="tableHeader">
+		<div class="tableFirstRow">订单号</div>
+		<div class="tableFirstRow">
+			<span style="float:left;margin-left:40px;">消费金额</span><img src="./image/list.jpg" style="width:20px;height:20px;padding-top:15px;float:left;margin-left:10px;cursor:pointer;"></div>
+		<div class="tableFirstRow" id="times">
+			<span style="float:left;margin-left:50px;">时间</span><img src="./image/list.jpg" style="width:20px;height:20px;padding-top:15px;float:left;margin-left:10px;cursor:pointer;"></div>
+		<div class="tableFirstRow" id="statu">
+			<span style="float:left;margin-left:50px;">状态</span><img src="./image/list.jpg" style="width:20px;height:20px;padding-top:15px;float:left;margin-left:10px;cursor:pointer;"></div>
+	</div>
+
+	<div id="orderBlockMsg">
+		<div class="orderMsg color1" statu="1">
+			<span>68</span><span>136</span><span class="t">13:10</span><span>未完成<label class="delete">删除</label></span>
+		</div>
+		<div class="orderMsg color1" statu="1">
+			<span>68</span><span>136</span><span class="t">13:11</span><span>已完成<label class="delete">删除</label></span>
+		</div>
+		<div class="orderMsg color1" statu="0">
+			<span>68</span><span>136</span><span class="t">13:20</span><span>未完成<label class="delete">删除</label></span>
+		</div>
+		<div class="orderMsg color1" statu="1">
+			<span>68</span><span>136</span><span class="t">11:10</span><span>已完成<label class="delete">删除</label></span>
+		</div>
+		<div class="orderMsg color1" statu="0">
+			<span>68</span><span>136</span><span class="t">14:10</span><span>未完成<label class="delete">删除</label></span>
+		</div>
+		<div class="orderMsg color1" statu="1">
+			<span>61</span>
+			<span>136</span>
+			<span class="t">15:10122332232332323</span>
+			<span>
+				已完成
+				<label class="delete">删除</label>
+			</span>
+		</div>
+
+	</div>
+	<div style="color:white;">
+		<div id="lastPage">上一页</div>
+		<div id="nextPage">下一页</div>
+	</div>
+	<div id="status">
+		<span>已完成</span>
+		<span>未完成</sapn>
+	</div>
+	<div id="time">
+		<span>时间最近</span>
+		<span>时间最远</sapn>
+	</div>
+	<div id="orderMsg">
+		<div id="orderId">
+			<img src="./image/close.jpg" style="position:absolute;right:6px;" id="close" />
+			订单号：<span id="orderIds" style="color:#558AA9;"></span>号
+		</div>
+		<div id="tableAndDate">
+			<div>桌号：<span id="tableId" style="color:#558AA9;"></span>号</div>
+			<div>下单时间：<span style="color:#558AA9;" id="orderDate"></span></div>
+			<div id="">消费金额：<span id="total"></span>元</div>
+		</div>
+		<div id="orderMess">
+			
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+msg = { 
+	'orderId':"121232",
+	"tableId":"4",
+	"date":"12020-2123-3232",
+	"count":3287,
+	"status":2,
+	"content":[
+		{ 
+			'name':"红烧肉",
+			"number":2,
+			"price":32
+		},
+		{ 
+			'name':"没菜扣肉",
+			"number":3,
+			"price":2
+		},
+		{ 
+			'name':"铁板烧",
+			"number":4,
+			"price":2
+		}
+	]
+}
+	function createOrders(dname,dcount,dprice){ 
+		var divOrder = document.createElement("div");
+		$(divOrder).addClass("orders");
+
+		var orderName = document.createElement("span")
+		$(orderName).addClass("orderName").text(dname);
+
+		var price = document.createElement("span");
+		$(price).addClass("price").text(dprice+"份");
+
+		var count = document.createElement("span");
+		$(count).addClass("count").text(dcount+"元");
+
+		divOrder.appendChild(orderName);
+		divOrder.appendChild(price);
+		divOrder.appendChild(count);
+		document.getElementById("orderMess").appendChild(divOrder);
+	}	
+	
+	function setMsg(orderId,tableId,date,cou){ 
+		$("#orderIds").text(orderId);
+		$("#tableId").text(tableId);
+		$("#orderDate").text(date);
+		$("#total").text(cou);
+	}
+
+	function dealMsg(msg){ 
+		setMsg(msg["orderId"],msg["tableId"],msg["date"],msg["count"]);
+
+		var length = msg['content'].length;
+		for(var i=0;i<length;i++){ 
+			var name = msg["content"][i]["name"];
+			var number = msg["content"][i]["number"];
+			var price = msg["content"][i]["price"];
+			createOrders(name,number,price)
+		}
+	}
+
+ 	window.onload = function(){
+ 		$("#status").hide();
+ 		$("#time").hide();
+		$("#orderMsg").hide();
+		$(".orderMsg").click(function(){ 
+			$("#orderMsg").show();
+			$("#orderMess").empty();
+			var orderId = $(this).find("span:first").text();
+			$.ajax({                          //发送手机号
+	   				type: "POST",
+	   				url: "",
+	   				data: orderId,
+	   				success: function(msg){
+	    				dealMsg(msg);	
+	  				}
+			});
+		
+	});
+	/******************************************************************/
+	$("#status").mouseleave(function(){
+  	  $("#status").hide();
+	})
+	$("#time").mouseleave(function(){
+  	  $("#time").hide();
+	});
+	/********************************************************************/
+	$("#close").click(function(){ 
+		$("#orderMsg").hide();
+	});
+
+	$("#lastPage").click(function(){ 
+		console.log("上一页");
+	});
+	$("#nextPage").click(function(){ 
+		console.log("下一页");
+	});
+
+	$("#statu").click(function(){ 
+		$("#status").show();
+		$("#time").hide();
+	});
+	$("#times").click(function(){ 
+		$("#time").show();
+		$("#status").hide();
+	})
+	$("#status span").click(function(){ 
+		$('#status').hide();
+		if($(this).text()=="已完成"){ 
+			$(".orderMsg").show();
+			$(".orderMsg[statu=0]").hide();
+		}else{ 
+			$(".orderMsg").show();
+			$(".orderMsg[statu=1]").hide();
+		}
+	});
+
+	$("#time").click(function(){ 
+		$(this).hide();
+
+	});
+
+
+
+	$("#doIt").click(function(){ 
+		document.orderByTime.submit();
+	});	
+
+	$("#startSelect").val("1123");
+	$("#endSelect").val("1123");
+	$(".delete").click(function(event){ 
+		var ret = window.confirm("确定删除？");
+		var orderId = $(this).parent().parent().children(":first").text();
+		var row = $(this).parent().parent();
+		if(ret){
+			$.ajax({                          //发送手机号
+   				type: "POST",
+   				url: "",
+   				data: orderId,
+   				success: function(msg){
+    				$(row).remove();
+  				}
+			});
+		}
+		event.stopPropagation();
+	});
+
+
+}
+</script>
+</html>

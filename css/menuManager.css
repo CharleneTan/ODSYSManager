@@ -1,0 +1,90 @@
+body{ 
+	margin: 0px;padding: 0px;width: 725px;height: 660px;overflow: hidden;background: #ABB8BE;
+}
+#header{ 
+	width: 100%;height: 50px;background:#233c52;position: fixed;top:0px;left: 0px;
+}
+.head{ 
+	float: right;margin-left: 0px;line-height: 30px;color:white;background:#233c52;opacity: 0.7;
+	text-align: center;margin-top: 8px;font-size: 16px;border:1px solid #6e8a98;
+}
+#asName{ 
+	width: 80px;height: 30px;cursor: pointer;
+}
+#serachBtn{ 
+	width: 60px;height: 30px;
+}
+#firstRow{ 
+	position: fixed;width: 727;height:40px;margin-top: 50px;height: 40px;line-height: 40px;text-align: center;
+	background: #42525F;top: 0px;
+}
+.fTr{ 
+	float: left;width: 142px;color:white;border:1px solid white;
+}
+#dishesList{ 
+	width: 778px;overflow-y: scroll;margin-top: 90px;height: 800px;
+	text-align: center;line-height: 30px;
+}
+.bgColor1{ 
+	background: #767C7E;
+}
+.bgColor2{ 
+	background: #313848;
+}
+.row{ 
+	width:100%;height: 30; 
+}
+#addDishes{ 
+	width: 120px;font-size: 18px;float: right;margin-right: 40px;background: #6c9abb;border-radius: 10px;margin-top: 10px;height: 32px;
+	line-height: 32px;text-align: center;color: white;
+}
+#sortBtn{ 
+	width:60px;height: 250px;position: absolute;top: 90px;left: 370px;text-align: center;line-height: 30px;background: #42525F;
+}
+#sortBtn div{ 
+	display: inline-block;width: 100%;height: 30px;color: white;border-bottom:1px solid white; cursor: pointer;
+}
+#search{ 
+	width: 80px;height: 60px;position: absolute;top: 40px;right: 82px;background: #233c52;color: white;
+	font-size: 16px;border:1px solid #6e8a98;cursor: pointer;	
+}
+#search div{ 
+	width: 80px;height: 30px;text-align: center;line-height: 30px;border-bottom:1px solid #6e8a98;	
+}
+#add{ 
+	width: 450px;height: 300px;position: fixed;top: 100px;left:100px;border-radius: 20px;
+	background:#CECFD1;
+}
+.formSty{ 
+	width: 100%;height: 60px;line-height: 60px;
+}
+.inputS{ 
+	height: 36px;width: 220px;margin-right: 50px;margin-left: 50px;font-size: 20px;color:#9D9D9D;
+}
+#select{ 
+	height: 36px;width: 100px;font-size: 18px;
+}
+#selects{ 
+	height: 36px;width: 100px;font-size: 18px;
+}
+#sub{ 
+	width: 140px;height: 30px;margin-left:140px;
+}
+#suba{ 
+	width: 140px;height: 30px;margin-left:140px;
+}
+#isSure{ 
+	position: fixed;width: 200px;height:130px;background: white;top:200px;border-radius: 20px;
+	left: 260px;
+}
+#tips{ 
+	width: 70%;height: 50px;margin: 20px auto;font-size: 22px;margin-bottom: 0px;
+}
+#opro span{ 
+	width:60px;height: 34px;margin-left: 20px; font-size: 22px;background: #142129;border-radius: 10px;color: white;
+	display: inline-block;text-align: center;line-height: 34px;cursor: pointer;
+}
+#modify{ 
+	width: 450px;height: 300px;position: fixed;top: 100px;left:100px;border-radius: 20px;
+	background:#CECFD1;
+}
